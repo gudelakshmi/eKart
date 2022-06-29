@@ -1,0 +1,25 @@
+{% extends 'eshop/base.html' %}
+{% block body %}
+<div class="container">
+    <!-- {{response}} -->
+    <div class="col my-4">
+
+        <h4>Payment status regarding your order Id {{response.ORDERID}}</h4>
+        {% for key, value in response.items %}
+        {{key}} - {{value}}
+        </br>
+        {% endfor %}
+        {% if response.RESPCODE == '01' %}
+        <b>Your order has been placed successfully</b>
+        {% else %}
+        <b>Payment has been failed</b>
+        {% endif%}
+
+    </div>
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'eshop/base.html' %}
+{% block body %}
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">We are eKart!</h1>
+            <p>eKart is an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and incorporated
+                in Singapore as a private limited company.The company initially focused on online book sales before
+                expanding into other product categories such as consumer electronics, fashion, home essentials,
+                groceries, and lifestyle products.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h3>The one stop shopping destination!</h3>
+                <p>Why do you want to hop from one store to
+                    another in search of the latest phone when you can find it on the Internet in a single click? Not
+                    only mobiles. You name
+                    it, and you can stay assured about finding them all here. For those of you with erratic working
+                    hours, eKart is your best bet. Shop in your PJs, at night or in the wee hours of the morning.
+
+                </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h3>Why eKart?</h3>
+                <p>E-commerce is revolutionizing the way we all shop in India. What's more, with our year-round shopping
+                    festivals and events, our prices are irresistible. We're
+                    sure you'll find yourself picking up more than what you had in mind. If you are wondering why you
+                    should shop from eKart when there are multiple options available to you. This e-commerce never
+                    shuts down.
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h3>What can you buy?</h3>
+                <p>eKart houses everything you can possibly imagine, from trending electronics like laptops,
+                    smartphones, and mobile accessories to in-vogue fashion and lifestyle
+                    accessories; from modern furniture to appliances that
+                    make your life easy like washing machines, TVs, ACs, mixer grinder juicers and other time-saving
+                    kitchen and small appliances; from home furnishings to
+                    toys and musical instruments, we got them all covered. </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p>Keep shopping in eKart...</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script>
+    window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+</script>
+<script src="/docs/4.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
+{% endblock %}
+
+{%block js%}
+<script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+</script>
+{%endblock%}
